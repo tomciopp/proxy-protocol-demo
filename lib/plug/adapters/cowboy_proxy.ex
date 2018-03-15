@@ -128,8 +128,8 @@ defmodule Plug.Adapters.CowboyProxy do
   def child_spec(scheme, plug, opts, cowboy_options \\ []) do
     [ref, nb_acceptors, trans_opts, proto_opts] = args(scheme, plug, opts, cowboy_options)
     ranch_module = case scheme do
-      :http  -> :ranch_tcp
-      :https -> :ranch_ssl
+      :http  -> :ranch_proxy
+      :https -> :ranch_proxy_ssl
     end
     :ranch.child_spec(ref, nb_acceptors, ranch_module, trans_opts, :cowboy_protocol, proto_opts)
   end

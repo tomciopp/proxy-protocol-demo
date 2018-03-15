@@ -44,5 +44,5 @@ frontend device
 
 backend backend
   mode tcp
-  server srv-1 0.0.0.0:4000 check
+  server srv-1 0.0.0.0:4000 check send-proxy-v2
 ```
