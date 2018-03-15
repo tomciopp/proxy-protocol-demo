@@ -3,6 +3,7 @@ defmodule ProxyProtocolDemoWeb.UserSocket do
 
   ## Channels
   # channel "room:*", ProxyProtocolDemoWeb.RoomChannel
+  channel "number:*", ProxyProtocolDemoWeb.NumberChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

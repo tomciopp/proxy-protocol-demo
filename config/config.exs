@@ -12,6 +12,7 @@ config :proxy_protocol_demo,
 # Configures the endpoint
 config :proxy_protocol_demo, ProxyProtocolDemoWeb.Endpoint,
   url: [host: "localhost"],
+  handler: Phoenix.Endpoint.CowboyProxyHandler,
   secret_key_base: "O5seC4khxA52oyzbwzJKiSf0pe9ypRYdFbhGGXOhHpXqQZKcwzyLLsglxBJTz0yq",
   render_errors: [view: ProxyProtocolDemoWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ProxyProtocolDemo.PubSub,
